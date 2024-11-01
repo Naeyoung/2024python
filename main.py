@@ -1,5 +1,7 @@
 
 
+import streamlit as st
+
 # 타이틀과 설명 추가
 st.title('🔮 나의 첫 스트림릿 웹앱 - MBTI 분석 🔮')
 st.write("안녕하세요! MBTI 유형을 선택하고 본인의 특성을 확인해보세요! 📊")
