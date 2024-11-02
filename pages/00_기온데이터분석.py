@@ -1,5 +1,8 @@
 # pandas 라이브러리 불러오기
+
 import pandas as pd
+import streamlit as st
+
 # 판다스에서 csv 데이터 읽어오기
 df = pd.read_csv('daily_temp.csv')
 
