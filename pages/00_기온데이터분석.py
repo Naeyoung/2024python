@@ -13,4 +13,4 @@ st.write("년도별 일별 기온 분석하기📊")
 df = df.rename(columns = {'평균기온(℃)': '평균기온', '최저기온(℃)': '최저기온','최고기온(℃)': '최고기온'})
 df['일교차'] = df['최고기온']-df['최저기온']
 
-df.describe()
+st.write(df.describe())
