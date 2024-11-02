@@ -34,5 +34,5 @@ october_avg_temp = october_data.groupby('년')['평균기온'].mean().reset_inde
 
 #그래프 출력
 st.write("10월 평균기온 추이")
-fig = px.line(september_avg_temp, x='년', y='평균기온', title = "년도별 10월 평균 기온 변화', labes ={'년':'년도', '평균기온':'평균기온'})
+fig = px.line(october_avg_temp, x='년', y='평균기온', title = "년도별 10월 평균 기온 변화', labes ={'년':'년도', '평균기온':'평균기온'})
 st.plotly_cart(fig)
