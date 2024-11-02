@@ -36,6 +36,6 @@ selected_month_data = df[df['월'] == selected_month]
 selected_month_avg_temp = selected_month_data.groupby('년')['평균기온'].mean().reset_index() 
 
 #그래프 출력
-st.write("{selected_month}월 평균기온 추이🤓")
-fig = px.line(selected_month_avg_temp, x='년', y='평균기온', title = '년도별 {selected_month}월 평균 기온 변화', labels ={'년':'년도', '평균기온':'평균기온'})
+st.write(f"{selected_month}월 평균기온 추이🤓")
+fig = px.line(selected_month_avg_temp, x='년', y='평균기온', title = f'년도별 {selected_month}월 평균 기온 변화', labels ={'년':'년도', '평균기온':'평균기온'})
 st.plotly_chart(fig)
