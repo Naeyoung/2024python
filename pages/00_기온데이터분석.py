@@ -26,13 +26,16 @@ df['월'] = df['날짜'].dt.month
 df['일'] = df['날짜'].dt.day
 df['요일'] = df['날짜'].dt.weekday
 
-# 9월 데이터만 필터링
-october_data = df[df['월'] == 10]
+# 월 선택 옵션 추가 
+selected_months = st.selectbox("평균 기온이 궁금한 달을 선택하세요", range(1,13), format_func=lambda x:f"{x}월"})
+
+# 선택한 월의 데이터만 필터링
+selected_month_data = df[df['월'] == selected_month]
 
 #년도별 평균 기온 계산
-october_avg_temp = october_data.groupby('년')['평균기온'].mean().reset_index() 
+selected_month_avg_temp = selected_month_data.groupby('년')['평균기온'].mean().reset_index() 
 
 #그래프 출력
 st.write("10월 평균기온 추이🤓")
-fig = px.line(october_avg_temp, x='년', y='평균기온', title = '년도별 10월 평균 기온 변화', labels ={'년':'년도', '평균기온':'평균기온'})
+fig = px.line(october_avg_temp, x='년', y='평균기온', title = '년도별 {selected_month}월 평균 기온 변화', labels ={'년':'년도', '평균기온':'평균기온'})
 st.plotly_chart(fig)
