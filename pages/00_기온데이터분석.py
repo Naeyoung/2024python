@@ -27,7 +27,7 @@ df['일'] = df['날짜'].dt.day
 df['요일'] = df['날짜'].dt.weekday
 
 # 월 선택 옵션 추가 
-selected_months = st.selectbox("평균 기온이 궁금한 달을 선택하세요", range(1,13), format_func=lambda x:f"{x}월"})
+selected_months = st.selectbox("평균 기온이 궁금한 달을 선택하세요", range(1,13), format_func=lambda x:f"{x}월")
 
 # 선택한 월의 데이터만 필터링
 selected_month_data = df[df['월'] == selected_month]
